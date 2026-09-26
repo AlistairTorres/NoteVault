@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NoteVault – Encrypted Notes</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A local browser workspace for short notes.">
+  <title>NoteVault | Local Notes</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <div class="container">
-    <h1>🗝️ NoteVault</h1>
-    
-    <textarea id="noteInput" placeholder="Type your secret note here..."></textarea>
-    <button onclick="saveNote()">Encrypt & Save</button>
-
-    <h2>Your Encrypted Notes</h2>
-    <ul id="noteList"></ul>
-  </div>
-
-  <script src="script.js"></script>
+  <main class="container">
+    <h1>NoteVault</h1>
+    <p>Keep short notes in this browser. Notes are stored locally and are not encrypted.</p>
+    <form id="note-form">
+      <label for="noteInput">New note</label>
+      <textarea id="noteInput" maxlength="2000" placeholder="Write a note..." required></textarea>
+      <button type="submit">Save note</button>
+    </form>
+    <h2>Your notes</h2>
+    <ul id="noteList" aria-label="Saved notes"></ul>
+    <p id="empty-state">No notes saved yet.</p>
+  </main>
 </body>
 </html>
